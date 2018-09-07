@@ -14,9 +14,9 @@ end
 def sum_to_n?(arr, n)
   test = false
   arr.each_with_index do |m, i|
-    arr.delete_at(i)
+    arr.delete_at i
     arr.each do |o|
-      test = true if (m + o) == n
+      test = true if m + o == n
     end
   end
   test
@@ -25,19 +25,23 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  "Hello, #{name}"
 end
 
-def starts_with_consonant? s
-  # YOUR CODE HERE
+def starts_with_consonant?(s)
+  if s[0].respond_to?(:downcase)
+    s[0].downcase =~ /[bcdfghjklmnpqrstvwxyz]/
+  else
+    false
+  end
 end
 
-def binary_multiple_of_4? s
+def binary_multiple_of_4?(s)
   # YOUR CODE HERE
 end
 
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  # YOUR CODE HERE
 end
