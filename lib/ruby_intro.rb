@@ -1,17 +1,25 @@
+# frozen_string_literal: true
 # When done, submit this entire file to the autograder.
 
 # Part 1
 
-def sum arr
-  # YOUR CODE HERE
+def sum(arr)
+  arr.reduce(:+) || 0
 end
 
-def max_2_sum arr
-  # YOUR CODE HERE
+def max_2_sum(arr)
+  arr.max(2).reduce(:+) || 0
 end
 
-def sum_to_n? arr, n
-  # YOUR CODE HERE
+def sum_to_n?(arr, n)
+  test = false
+  arr.each_with_index do |m, i|
+    arr.delete_at(i)
+    arr.each do |o|
+      test = true if (m + o) == n
+    end
+  end
+  test
 end
 
 # Part 2
